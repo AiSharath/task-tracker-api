@@ -15,14 +15,3 @@ git clone https://github.com/AiSharath/task-tracker-api.git
 cd task-tracker-api
 npm install
 ```
-
-## API Endpoints
-
-- `GET /tasks` - Get all tasks
-- `POST /tasks` - Create a task
-- `PUT /tasks/:id` - Update a task
-- `DELETE /tasks/:id` - Delete a task
-
-## License
-
-MIT
