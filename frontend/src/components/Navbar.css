@@ -1,0 +1,48 @@
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:35px;
+    width:100%;
+    background-color:#FFD400;
+}
+
+.buttons{
+    display:flex;
+    gap:5px;
+    margin-right:25px;
+}
+
+button{
+    border:none;
+    border-radius:4px;
+    font-size:12px;
+}
+
+.heading{
+    margin-left:25px;
+}
+
+.sign-up{
+    color:white;
+    background-color:black;
+}
+
+.sign-up:hover{
+    background-color:rgb(67, 65, 65);
+}
+
+.sign-in{
+    color:black;
+    background-color:white;
+}
+
+.sign-in:hover{
+    background-color:rgb(214, 213, 213);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}

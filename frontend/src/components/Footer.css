@@ -1,0 +1,49 @@
+.footer-container {
+  width: 100%;
+  padding: 40px 60px;
+  background-color: #1f2937; /* dark footer - better contrast */
+  box-sizing: border-box;
+}
+
+/* REMOVED position:scroll - that's not valid, just remove it */
+
+.footer-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent; /* removed orange - inherits from container */
+}
+
+.footer-table thead th {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff; /* white on dark bg */
+  padding-bottom: 16px;
+}
+
+.footer-table tbody tr {
+  font-size: 14px;
+}
+
+.footer-table tbody td {
+  text-align: left;
+  font-size: 14px;
+  color: #9ca3af; /* light grey on dark bg */
+  padding: 5px 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.footer-table tbody td:hover {
+  color: #ffffff; /* white on hover */
+}
+
+.footer-container p {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  background-color: transparent; /* removed random orange */
+}
