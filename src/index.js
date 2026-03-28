@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const connectDB = require('./db')
+const cors = require("cors")
 const authRoutes = require('./routes/authRoutes')
 const taskRoutes = require('./routes/taskRoutes')
 const userRoutes = require('./routes/userRoutes')
@@ -8,6 +9,7 @@ const userRoutes = require('./routes/userRoutes')
 dotenv.config()
 
 const app = express()
+app.use(cors())
 
 connectDB()
 
