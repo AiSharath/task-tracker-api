@@ -1,0 +1,131 @@
+.tasklist-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tasklist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.tasklist-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.tasklist-header button {
+    background-color: #f5c800;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tasklist-header button:hover {
+    background-color: #e0b800;
+}
+
+/* GRID */
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.task-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-card.assigned {
+    opacity: 0.7;
+    border-left: 4px solid #28a745;
+}
+
+.task-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-top h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* STATUS BADGE */
+.status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.status.pending {
+    background-color: #fff4cc;
+    color: #b38600;
+}
+
+.status.assigned {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* BOTTOM */
+.task-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.due-date {
+    font-size: 13px;
+    color: #666;
+}
+
+.task-bottom button {
+    background-color: #f5c800;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-bottom button:hover {
+    background-color: #e0b800;
+}
+
+.assigned-to {
+    font-size: 13px;
+    color: #155724;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tasks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tasks-grid {
+        grid-template-columns: 1fr;
+    }
+}
