@@ -60,3 +60,26 @@
 .form button:hover {
     background-color: #e0b800;
 }
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

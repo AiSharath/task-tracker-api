@@ -19,6 +19,13 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        console.log("formData:", formData)  // ← add this to check
+
+    if (!formData.role) {
+        alert("Please select a role!")  // ← shows if role is empty
+        return
+    }
         try {
             const res = await fetch("http://localhost:5000/api/auth/register", {
                 method: "POST",
@@ -29,13 +36,14 @@ function Register() {
             })
 
             const data = await res.json()
-
+            console.log("response:",data)
             if (res.ok) {
                 document.cookie = `token=${data.token}; path=/; max-age=${60 * 60 * 24 * 7}`
                 console.log("Success", data)
-                navigate("/")  // redirect to home
+                navigate("/dashboard")  // redirect to home
             } else {
                 console.log("Error", data.message)
+                alert(data.message)
             }
         } catch (error) {
             console.log("Network error:", error)

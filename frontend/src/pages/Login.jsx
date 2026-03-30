@@ -1,21 +1,23 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import "./Login.css"
 
 function Login() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const [error, setError] = useState("")
 
     const [formData, setFormData] = useState({
-        "email": "",
-        "password": ""
-    });
+        email: "",
+        password: ""
+    })
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        setError("")
         try {
             const res = await fetch("http://localhost:5000/api/auth/login", {
                 method: "POST",
@@ -29,16 +31,14 @@ function Login() {
 
             if (res.ok) {
                 document.cookie = `token=${data.token}; path=/; max-age=${60 * 60 * 24 * 7}`
-                console.log("Success", data)
-                navigate("/")
+                navigate("/dashboard")  // ← redirect to dashboard
             } else {
-                console.log("Error", data.message)
+                setError(data.message)  // ← show error to user
             }
         } catch (error) {
-            console.log("Network error:", error)
+            setError("Network error. Please try again.")
         }
     }
-
 
     return (
         <>
@@ -52,21 +52,26 @@ function Login() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
+                            required
                         />
-
                         <input
                             type="password"
                             placeholder="Enter your password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
+                            required
                         />
                     </div>
+                    {error && <p className="error-message">{error}</p>}
                     <button type="submit">Login</button>
                 </form>
+                <div className="login-link">
+                    <p>Don't have an account? <Link to="/register">Register</Link></p>
+                </div>
             </div>
         </>
     )
 }
 
-export default Login;
+export default Login

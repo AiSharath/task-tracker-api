@@ -12,6 +12,7 @@
     border-right: 1px solid #eee;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 24px 16px;
     position: fixed;
     height: 100vh;
@@ -105,6 +106,12 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .db-header button:hover {
@@ -203,6 +210,16 @@
 .db-stat-card p {
     font-size: 14px;
     color: #888;
+}
+
+.db-sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.db-badge.assigned {
+    background-color: #d4edda;
+    color: #155724;
 }
 
 /* RESPONSIVE */
